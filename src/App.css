@@ -312,16 +312,7 @@ header a {
   position: relative;
 }
 
-.StarFilled {
-  width: 18px;
-  height: 18px;
-  padding: 3px 2px 2px 2px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.StarEmpty {
+.Star {
   width: 18px;
   height: 18px;
   padding: 3px 2px 2px 2px;
