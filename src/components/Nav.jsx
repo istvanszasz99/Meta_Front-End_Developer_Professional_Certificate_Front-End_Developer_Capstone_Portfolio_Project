@@ -3,8 +3,8 @@ import React from "react";
 export default function Nav() {
   return (
     <>
-      <nav>
-        <ul>
+      <nav className="Nav">
+        <ul className="Link">
           <li>
             <a href="index.html">Home</a>
           </li>

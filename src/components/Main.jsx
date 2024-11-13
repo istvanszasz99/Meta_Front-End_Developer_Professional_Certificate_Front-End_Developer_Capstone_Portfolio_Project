@@ -1,158 +1,190 @@
 import React from "react";
+import HeroPicture from "../assets/images/restauranfood.png";
+import SpecialPic1 from "../assets/images/special-pic.png";
+import SpecialPic2 from "../assets/images/special-pic2.png";
+import SpecialPic3 from "../assets/images/special-pic3.png";
+import ButtonLogo from "../assets/images/special-card-desc-footer-button-logo.png";
+import TestemonialPfp from "../assets/images/testimonials-card-profile-pic.png";
+import StarFilled from "../assets/images/star_filled.png";
+import StarEmpty from "../assets/images/star_empty.png";
+import AboutPic from "../assets/images/about-image-mask.png";
+
 
 export default function Main() {
   return (
     <>
-      <section className="hero">
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
-        <p>
+      <section className="Hero">
+        <div className="HeroContent">
+          <div className="HeroText">
+        <h1 className="HeroTitle"><span>Little Lemon<br/></span><span>Chicago</span></h1>
+        <p className="HeroParagraph">
           At Little Lemon, we believe that every meal should be a celebration.
           Nestled in the heart of Chicago, our cozy eatery serves up vibrant
           dishes crafted with locally sourced ingredients and a twist of
           creativity.
         </p>
-        <button>Reserve a Table</button>
-        <img src="https://via.placeholder.com/375x355" alt="pic" />
+        <button className="ButtonPrimary">Reserve a Table</button>
+        </div>
+        <img src={HeroPicture} alt="pic" className="HeroPicture" />
+        </div>
       </section>
-      <section>
-        <h2>Specials</h2>
-        <button>Online Menu</button>
-        <article>
-          <div>
-            <img src="https://via.placeholder.com/265x185" alt="pic1" />
+      <section className="Specials">
+        <div className="SpecialsHeader">
+        <h2 className="SpecialsTitle">Specials</h2>
+        <button className="ButtonPrimary">Online Menu</button>
+        </div>
+        <div className="SpecialsCards">
+        <article className="SpecialsCard">
+            <img className="SpecialPic" src={SpecialPic1} alt="pic1" />
+            <div className="SpecialCardDesc">
+          <div className="SpecialCardDescHeader">
+            <div className="SpecialCardDescHeaderTitle">Greek salad</div>
+            <div className="SpecialCardDescHeaderPrice">$ 12.99</div>
           </div>
-          <div>
-            <div>Greek salad</div>
-            <div>$ 12.99</div>
-          </div>
-          <p>
+          <p className="SpecialCardDescParagraph">
             The famous greek salad of crispy lettuce, peppers, olives and our
             Chicago style feta cheese, garnished with crunchy garlic and
             rosemary croutons.
           </p>
-          <button>
+          <div className="SpecialCardDescFooter">
+          <button className="SpecialCardDescFooterButton">
             Order a delivery{" "}
-            <img src="https://via.placeholder.com/17x11" alt="orderLogo" />
           </button>
+          <img className="SpecialCardDescFooterButtonLogo" src={ButtonLogo} alt="orderLogo" />
+          </div>
+          </div>
         </article>
-        <article>
-          <div>
-            <img src="https://via.placeholder.com/265x185" alt="pic2" />
+        <article className="SpecialsCard">
+            <img className="SpecialPic" src={SpecialPic2} alt="pic1" />
+            <div className="SpecialCardDesc">
+          <div className="SpecialCardDescHeader">
+            <div className="SpecialCardDescHeaderTitle">Bruchetta</div>
+            <div className="SpecialCardDescHeaderPrice">$ 5.99</div>
           </div>
-          <div>
-            <div>Bruchetta</div>
-            <div>$ 5.99</div>
-          </div>
-          <p>
-            Our Bruschetta is made from grilled bread that has been smeared with
-            garlic and seasoned with salt and olive oil.
+          <p className="SpecialCardDescParagraph">
+          Our Bruschetta is made from grilled bread that has been smeared with
+          garlic and seasoned with salt and olive oil.
           </p>
-          <button>
+          <div className="SpecialCardDescFooter">
+          <button className="SpecialCardDescFooterButton">
             Order a delivery{" "}
-            <img src="https://via.placeholder.com/17x11" alt="orderLogo" />
           </button>
-        </article>{" "}
-        <article>
-          <div>
-            <img src="https://via.placeholder.com/265x185" alt="pic3" />
+          <img className="SpecialCardDescFooterButtonLogo" src={ButtonLogo} alt="orderLogo" />
           </div>
-          <div>
-            <div>Lemon Dessert</div>
-            <div>$ 5.00</div>
           </div>
-          <p>
-            This comes straight from grandma’s recipe book, every last
-            ingredient has been sourced and is as authentic as can be imagined.
-          </p>
-          <button>
-            Order a delivery{" "}
-            <img src="https://via.placeholder.com/17x11" alt="orderLogo" />
-          </button>
         </article>
+        <article className="SpecialsCard">
+            <img className="SpecialPic" src={SpecialPic3} alt="pic1" />
+            <div className="SpecialCardDesc">
+          <div className="SpecialCardDescHeader">
+            <div className="SpecialCardDescHeaderTitle">Lemon Dessert</div>
+            <div className="SpecialCardDescHeaderPrice">$ 5.00</div>
+          </div>
+          <p className="SpecialCardDescParagraph">
+          This comes straight from grandma’s recipe book, every last
+          ingredient has been sourced and is as authentic as can be imagined.
+            rosemary croutons.
+          </p>
+          <div className="SpecialCardDescFooter">
+          <button className="SpecialCardDescFooterButton">
+            Order a delivery{" "}
+          </button>
+          <img className="SpecialCardDescFooterButtonLogo" src={ButtonLogo} alt="orderLogo" />
+          </div>
+          </div>
+        </article>
+        </div>
       </section>
-      <section>
-        <h2>Testimonials</h2>
-        <div className="reviewCard">
-          <div>
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
+      <section className="Testimonials">
+        <div className="TestimonialsContent">
+        <h2 className="TestimonialsTitle">Testimonials</h2>
+        <div className="TestimonialsCards">
+        <div className="TestimonialsCard">
+          <div className="TestimonialsCardRating">
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
           </div>
-          <div>
-            <div>
-              <img src="https://via.placeholder.com/32x32" alt="pfp" />
+          <div className="TestimonialsCardProfile">
+              <img className="TestimonialsCardProfilePic" src={TestemonialPfp} alt="pfp" />
+              <div className="TestimonialsCardProfileNames">
+            <div className="TestimonialsCardProfileFullname">Sara Lopez</div>
+            <div className="TestimonialsCardProfileNickname">Sara72</div>
             </div>
-            <div>Sara Lopez</div>
-            <div>Sara72</div>
           </div>
-          <p>
+          <p className="TestimonialsCardParagraph">
             “Seriously cannot stop thinking about the Turkish Mac n’ Cheese!!”
           </p>
         </div>
-
-        <div className="reviewCard">
-          <div>
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
+        <div className="TestimonialsCard">
+          <div className="TestimonialsCardRating">
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
           </div>
-          <div>
-            <div>
-              <img src="https://via.placeholder.com/32x32" alt="pfp" />
+          <div className="TestimonialsCardProfile">
+              <img className="TestimonialsCardProfilePic" src={TestemonialPfp} alt="pfp" />
+              <div className="TestimonialsCardProfileNames">
+            <div className="TestimonialsCardProfileFullname">Jon Do</div>
+            <div className="TestimonialsCardProfileNickname">Johnny_Utah</div>
             </div>
-            <div>Jon Do</div>
-            <div>Johnny_Utah</div>
           </div>
-          <p>
-            “We had such a great time celebrating my grandmothers bitthday!”
+          <p className="TestimonialsCardParagraph">
+          “We had such a great time celebrating my grandmothers bitthday!”
           </p>
         </div>
-
-        <div className="reviewCard">
-          <div>
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
+        <div className="TestimonialsCard">
+          <div className="TestimonialsCardRating">
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
           </div>
-          <div>
-            <div>
-              <img src="https://via.placeholder.com/32x32" alt="pfp" />
+          <div className="TestimonialsCardProfile">
+              <img className="TestimonialsCardProfilePic" src={TestemonialPfp} alt="pfp" />
+              <div className="TestimonialsCardProfileNames">
+            <div className="TestimonialsCardProfileFullname">Sara Lopez</div>
+            <div className="TestimonialsCardProfileNickname">Sara72</div>
             </div>
-            <div>Sara Lopez</div>
-            <div>Sara72</div>
           </div>
-          <p>“Best Feta Salad in town. Flawless everytime!”</p>
+          <p className="TestimonialsCardParagraph">
+          “Best Feta Salad in town. Flawless everytime!”
+          </p>
         </div>
-
-        <div className="reviewCard">
-          <div>
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="full" />
-            <img src="https://via.placeholder.com/24x24" alt="empty" />
+        <div className="TestimonialsCard">
+          <div className="TestimonialsCardRating">
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarFilled" src={StarFilled} alt="full" />
+            <img className="StarEmpty" src={StarEmpty} alt="full" />
           </div>
-          <div>
-            <div>
-              <img src="https://via.placeholder.com/32x32" alt="pfp" />
+          <div className="TestimonialsCardProfile">
+              <img className="TestimonialsCardProfilePic" src={TestemonialPfp} alt="pfp" />
+              <div className="TestimonialsCardProfileNames">
+            <div className="TestimonialsCardProfileFullname">Sara Lopez</div>
+            <div className="TestimonialsCardProfileNickname">Sara72</div>
             </div>
-            <div>Sara Lopez</div>
-            <div>Sara72</div>
           </div>
-          <p>“Such a chilled out atmosphere - love it!”</p>
+          <p className="TestimonialsCardParagraph">
+          “Such a chilled out atmosphere - love it!”
+          </p>
+        </div>
+        </div>
         </div>
       </section>
-      <section>
-        <h2>Little Lemon</h2>
-        <h3>Chichago</h3>
-        <p>
+      <section className="About">
+        <div className="AboutText">
+          <div className="AboutTitle">
+        <h2 className="AboutTitleH1">Little Lemon</h2>
+        <h3 className="AboutTitleH2">Chichago</h3>
+        </div>
+        <p className="AboutParagraph">
           Join us for brunch, lunch, or dinner, and let our warm atmosphere and
           friendly staff make you feel right at home.
           <br />
@@ -160,8 +192,10 @@ export default function Main() {
           occasion, Little Lemon is the perfect spot to savor delicious food and
           create unforgettable memories.
         </p>
-        <img src="https://via.placeholder.com/276x338" alt="pic1" />
-        <img src="https://via.placeholder.com/276x338" alt="pic2" />
+        </div>
+        <div className="AboutImages">
+        <img className="AboutImageMask" src={AboutPic} alt="pic" />
+        </div>
       </section>
     </>
   );

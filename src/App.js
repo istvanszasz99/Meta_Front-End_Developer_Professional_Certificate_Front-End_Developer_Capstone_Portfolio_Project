@@ -4,11 +4,11 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 function App() {
   return (
-    <>
+    <div className="Prototype">
       <Header />
       <Main />
       <Footer />
-    </>
+    </div>
   );
 }
 

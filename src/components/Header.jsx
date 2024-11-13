@@ -5,8 +5,8 @@ import Nav from "./Nav";
 export default function Header() {
   return (
     <>
-      <header>
-        <img src={logo} alt="logo" />
+      <header className="Header">
+        <img className="HeaderLogo" src={logo} alt="logo" />
         <Nav />
       </header>
     </>

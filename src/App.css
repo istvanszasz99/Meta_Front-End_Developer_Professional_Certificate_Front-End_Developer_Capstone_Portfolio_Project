@@ -1,38 +1,524 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Prototype {
+  align-self: stretch;
+  height: auto;
+  background: #EDEFEE;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.Header {
+  width: 860px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header li {
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.HeaderLogo {
+  width: 200px;
+  height: 50px;
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Nav {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.Link {
+  display: flex;
+  flex-direction: row;
+  color: #333333;
+  gap: 28px;
+  font-size: 20px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.Link li{
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.Hero{
+  align-self: stretch;
+  height: 400px;
+  padding-left: 290px;
+  padding-right: 290px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #495E57;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.HeroContent {
+  width: 860px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HeroText {
+  width: 422px;
+  height: 350px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.HeroTitle {
+  align-self: stretch;
+}
+
+.HeroTitle span:first-child {
+  color: #F4CE14;
+  font-size: 64px;
+  font-family: 'Markazi Text', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.HeroTitle span:last-child {
+  color: #EDEFEE;
+  font-size: 40px;
+  font-family: 'Markazi Text', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.HeroParagraph {
+  align-self: stretch;
+  color: #EDEFEE;
+  font-size: 18px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.ButtonPrimary {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #F4CE14;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.HeroPicture {
+  width: 350px;
+  height: 350px;
+  border-radius: 16px;
+}
+
+.Specials {
+  height: auto;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.SpecialsHeader {
+  width: 860px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SpecialsTitle {
+  color: #333333;
+  font-size: 64px;
+  font-family: 'Markazi Text', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.SpecialsCards {
+  width: 860px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.SpecialCard {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.SpecialPic {
+  position:relative;
+  width:280px;
+  height: 185px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.SpecialCardDesc {
+  padding: 20px;
+  height:200px;
+  background-color: #FBDABB;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.SpecialCardDescHeader {
+  align-self: stretch;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SpecialCardDescHeaderTitle {
+  color: #333333;
+  font-size: 18px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.SpecialCardDescHeaderPrice {
+  color: #333333;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.SpecialCardDescParagraph {
+  align-self: stretch;
+  color: #495E57;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.SpecialCardDescFooter {
+  width: auto;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.SpecialCardDescFooterButton {
+  color: #333333;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 800;
+  background: none;
+  border-style: none;
+}
+
+.SpecialCardDescFooterButtonLogo {
+  width: 16.67px;
+  height: 10.54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Testimonials {
+  align-self: stretch;
+  height: 500px;
+  background: #495E57;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TestimonialsContent {
+  width: 860px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.TestimonialsTitle {
+  text-align: center;
+  color: #EDEFEE;
+  font-size: 64px;
+  font-family: 'Markazi Text';
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.TestimonialsCards {
+  align-self: stretch;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+
+.TestimonialsCard {
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.TestimonialsCardRating {
+  width: 111px;
+  height: 24px;
+  position: relative;
+}
+
+.StarFilled {
+  width: 18px;
+  height: 18px;
+  padding: 3px 2px 2px 2px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.StarEmpty {
+  width: 18px;
+  height: 18px;
+  padding: 3px 2px 2px 2px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Icon {
+  width: 20px;
+  height: 19px;
+  background: #1D1B20;
+}
+
+.TestimonialsCardProfile {
+  align-self: stretch;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.TestimonialsCardProfilePic {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+}
+
+.TestimonialsCardProfileNames {
+  flex: 1 1 0;
+  align-self: stretch;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.TestimonialsCardProfileFullname,
+.TestimonialsCardProfileNickname {
+  color: #333333;
+  font-size: 12px;
+  font-family: 'Karla';
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.TestimonialsCardProfileNickname {
+  color: #6E6F6E;
+}
+
+.TestimonialsCardParagraph {
+  width: 149px;
+  color: #6E6F6E;
+  font-size: 12px;
+  font-family: 'Karla';
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.About {
+  width: 860px;
+  height: 500px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AboutText {
+  flex: 1 1 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.AboutTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.AboutTitleH1 {
+  width: 450px;
+  height: 75px;
+  color: #F4CE14;
+  font-size: 64px;
+  font-family: 'Markazi Text';
+  font-weight: 500;
+  word-wrap: break-word;
+  margin: 10px;
+}
+
+.AboutTitleH2 {
+  width: 200px;
+  height: 45px;
+  color: #333333;
+  font-size: 40px;
+  font-family: 'Markazi Text';
+  font-weight: 500;
+  word-wrap: break-word;
+  margin: 10px;
+}
+
+.AboutParagraph {
+  align-self: stretch;
+  text-align: justify;
+  color: #333333;
+  font-size: 16px;
+  font-family: 'Karla';
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+.AboutImages {
+  width: 430px;
+  height: 460px;
+  padding: 57px 71px 57px 72px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.AboutImageMask {
+  width: 287px;
+  height: 346px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.Footer {
+  align-self: stretch;
+  height: 400px;
+  padding: 64px 284px;
+  background: #495E57;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.FooterContent {
+  width: 860px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.FooterLogo {
+  width: 150px;
+  height: 250px;
+}
+
+.FooterNavigation,
+.FooterContact,
+.FooterSocialmedialinks {
+  flex: 1 1 0;
+  align-self: stretch;
+  padding: 100px 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.FooterNavigationTitle,
+.FooterContactTitle,
+.FooterSocialmedialinksTitle {
+  color: #EDEFEE;
+  font-size: 20px;
+  font-family: 'Karla';
+  font-weight: 800;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+.FooterNavigationList > a,
+.FooterContactList,
+.FooterSocialmedialinksList > a {
+  color: #EDEFEE;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'Karla';
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+  list-style: none;
+  text-decoration: none;
 }
