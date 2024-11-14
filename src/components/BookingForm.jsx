@@ -1,16 +1,17 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
+import { fetchAPI } from "../API";
 
-// Function to initialize available times
 const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  const today = new Date();
+  return fetchAPI(today);
 };
 
 const updateTimes = (state, action) => {
-  const { type } = action;
+  const { type, date } = action;
 
   switch (type) {
     case "UPDATE_TIMES":
-      return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+      return fetchAPI(new Date(date));
     default:
       return state;
   }
@@ -28,10 +29,15 @@ const BookingForm = () => {
     initializeTimes
   );
 
+  useEffect(() => {
+    if (date) {
+      dispatch({ type: "UPDATE_TIMES", date });
+    }
+  }, [date]);
+
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
     setDate(selectedDate);
-    dispatch({ type: "UPDATE_TIMES", date: selectedDate });
   };
 
   const handleTimeChange = (e) => setTime(e.target.value);

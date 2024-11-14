@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import BookingPage from './BookingPage';
+import ConfirmedBooking from './components/ConfirmedBooking';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/booking",
     element: <BookingPage />,
+  },
+  {
+    path: "/confirmed",
+    element: <ConfirmedBooking />,
   }
 ]);
 
