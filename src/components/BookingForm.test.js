@@ -38,3 +38,41 @@ jest.mock('./API', () => ({
     // The times should match what fetchAPI returned, not the initial static list
     expect(updatedTimes).toEqual(['17:00', '18:00', '19:00', '20:00']);
   });
+
+  test('Date input has the required attribute', () => {
+    render(<BookingForm />);
+    const dateInput = screen.getByLabelText(/choose date/i);
+    expect(dateInput).toHaveAttribute('required');
+  });
+
+  test('Time select has the required attribute', () => {
+    render(<BookingForm />);
+    const timeSelect = screen.getByLabelText(/choose time/i);
+    expect(timeSelect).toHaveAttribute('required');
+  });
+
+  test('Guests input has the required attribute and valid min/max values', () => {
+    render(<BookingForm />);
+    const guestsInput = screen.getByLabelText(/number of guests/i);
+    expect(guestsInput).toHaveAttribute('required');
+    expect(guestsInput).toHaveAttribute('min', '1');
+    expect(guestsInput).toHaveAttribute('max', '10');
+  });
+
+  test('Occasion select has the required attribute', () => {
+    render(<BookingForm />);
+    const occasionSelect = screen.getByLabelText(/occasion/i);
+    expect(occasionSelect).toHaveAttribute('required');
+  });
+
+  test('Date input has the type="date" attribute', () => {
+    render(<BookingForm />);
+    const dateInput = screen.getByLabelText(/choose date/i);
+    expect(dateInput).toHaveAttribute('type', 'date');
+  });
+
+  test('Guests input has the type="number" attribute', () => {
+    render(<BookingForm />);
+    const guestsInput = screen.getByLabelText(/number of guests/i);
+    expect(guestsInput).toHaveAttribute('type', 'number');
+  });
