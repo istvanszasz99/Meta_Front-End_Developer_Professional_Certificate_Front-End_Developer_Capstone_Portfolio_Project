@@ -1,5 +1,4 @@
 import React, { useState, useReducer, useEffect } from "react";
-
 import { useNavigate } from "react-router-dom";
 import { submitAPI, fetchAPI } from "../API";
 
@@ -10,7 +9,6 @@ const initializeTimes = () => {
 
 const updateTimes = (state, action) => {
   const { type, date } = action;
-
   switch (type) {
     case "UPDATE_TIMES":
       return fetchAPI(new Date(date));
@@ -48,6 +46,17 @@ const BookingForm = () => {
   const handleGuestsChange = (e) => setGuests(e.target.value);
   const handleOccasionChange = (e) => setOccasion(e.target.value);
 
+  const isFormValid = () => {
+    return (
+      date &&
+      time &&
+      guests >= 1 &&
+      guests <= 10 &&
+      occasion &&
+      availableTimes.length > 0
+    );
+  };
+
   const submitForm = (formData) => {
     if (submitAPI(formData)) {
       navigate("/confirmed");
@@ -72,10 +81,16 @@ const BookingForm = () => {
         id="res-date"
         value={date}
         onChange={handleDateChange}
+        required
       />
 
       <label htmlFor="res-time">Choose time</label>
-      <select id="res-time" value={time} onChange={handleTimeChange}>
+      <select
+        id="res-time"
+        value={time}
+        onChange={handleTimeChange}
+        required
+      >
         {availableTimes.map((availableTime) => (
           <option key={availableTime} value={availableTime}>
             {availableTime}
@@ -92,15 +107,20 @@ const BookingForm = () => {
         id="guests"
         value={guests}
         onChange={handleGuestsChange}
+        required
       />
 
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" value={occasion} onChange={handleOccasionChange}>
+      <select id="occasion" value={occasion} onChange={handleOccasionChange} required>
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your reservation" />
+      <input
+        type="submit"
+        value="Make Your reservation"
+        disabled={!isFormValid()}
+      />
     </form>
   );
 };
