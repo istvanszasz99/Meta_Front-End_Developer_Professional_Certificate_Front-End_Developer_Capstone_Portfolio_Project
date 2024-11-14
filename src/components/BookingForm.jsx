@@ -120,6 +120,7 @@ const BookingForm = () => {
         type="submit"
         value="Make Your reservation"
         disabled={!isFormValid()}
+        aria-label="Submit Reservation Form"
       />
     </form>
   );
