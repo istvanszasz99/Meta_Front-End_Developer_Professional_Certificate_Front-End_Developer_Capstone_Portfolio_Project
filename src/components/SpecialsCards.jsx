@@ -15,9 +15,9 @@ export default function SpecialsCards() {
             </div>
             <p className="SpecialCardDescParagraph">{item.cardParagraph}</p>
             <div className="SpecialCardDescFooter">
-              <button className="SpecialCardDescFooterButton">
+              <a href="#delivery"><button className="SpecialCardDescFooterButton">
                 Order a delivery{" "}
-              </button>
+                </button></a>
               <img
                 className="SpecialCardDescFooterButtonLogo"
                 src={ButtonLogo}

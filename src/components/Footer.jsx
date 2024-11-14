@@ -15,10 +15,10 @@ export default function Footer() {
             <div className="FooterNavigationTitle">
               Navigation
               <p className="FooterNavigationList">
-                  <a href="index.html">Home</a>
+                  <a href="/">Home</a>
                   <a href="#about">About</a>
                   <a href="#menu">Menu</a>
-                  <a href="#reservations">Reservations</a>
+                  <a href="/booking">Reservations</a>
                   <a href="#orderOnline">Order Online</a>
                   <a href="#login">Login</a>
                   </p>
@@ -43,11 +43,11 @@ export default function Footer() {
           <div className="FooterSocialmedialinksTitle">
             Social Media Links
             <p className="FooterSocialmedialinksList">
-            <a href="index.html">Facebook</a>
-            <a href="index.html">Instagram</a>
-            <a href="index.html">Twitter</a>
-            <a href="index.html">LinkedIn</a>
-            <a href="index.html">TikTok</a>
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.instagram.com">Instagram</a>
+            <a href="https://www.x.com">Twitter</a>
+            <a href="https://www.linkedin.com">LinkedIn</a>
+            <a href="https://www.tiktok.com">TikTok</a>
             </p>
           </div>
           </div>

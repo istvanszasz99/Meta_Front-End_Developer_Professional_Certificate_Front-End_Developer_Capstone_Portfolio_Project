@@ -23,15 +23,15 @@ export default function Main() {
               serves up vibrant dishes crafted with locally sourced ingredients
               and a twist of creativity.
             </p>
-            <button className="ButtonPrimary">Reserve a Table</button>
+            <a href="/booking"><button className="ButtonPrimary">Reserve a Table</button></a>
           </div>
           <img src={HeroPicture} alt="pic" className="HeroPicture" />
         </div>
       </section>
-      <section className="Specials">
+      <section className="Specials" id="menu">
         <div className="SpecialsHeader">
           <h2 className="SpecialsTitle">Specials</h2>
-          <button className="ButtonPrimary">Online Menu</button>
+          <a href="#menu"><button className="ButtonPrimary">Online Menu</button></a>
         </div>
         <div className="SpecialsCards">
           <SpecialsCards />
@@ -45,7 +45,7 @@ export default function Main() {
           </div>
         </div>
       </section>
-      <section className="About">
+      <section className="About" id="about">
         <div className="AboutText">
           <div className="AboutTitle">
             <h2 className="AboutTitleH1">Little Lemon</h2>

@@ -72,11 +72,13 @@ const BookingForm = () => {
 
   return (
     <form
+      className="ReservationForm"
       onSubmit={handleSubmit}
       style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
     >
-      <label htmlFor="res-date">Choose date</label>
+      <label htmlFor="res-date">Choose date:</label>
       <input
+        className="Select"
         type="date"
         id="res-date"
         value={date}
@@ -84,8 +86,9 @@ const BookingForm = () => {
         required
       />
 
-      <label htmlFor="res-time">Choose time</label>
+      <label htmlFor="res-time">Choose time:</label>
       <select
+        className="Select"
         id="res-time"
         value={time}
         onChange={handleTimeChange}
@@ -98,8 +101,9 @@ const BookingForm = () => {
         ))}
       </select>
 
-      <label htmlFor="guests">Number of guests</label>
+      <label htmlFor="guests">Number of guests:</label>
       <input
+        className="Select"
         type="number"
         placeholder="1"
         min="1"
@@ -110,18 +114,29 @@ const BookingForm = () => {
         required
       />
 
-      <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" value={occasion} onChange={handleOccasionChange} required>
-        <option value="Birthday">Birthday</option>
-        <option value="Anniversary">Anniversary</option>
-      </select>
+      <div className="SelectField">
+        <label htmlFor="occasion">Occasion:</label>
+        <select
+          className="Select"
+          id="occasion"
+          value={occasion}
+          onChange={handleOccasionChange}
+          required
+        >
+          <option value="Birthday">Birthday</option>
+          <option value="Anniversary">Anniversary</option>
+        </select>
+      </div>
 
-      <input
+      <button
+        className="ButtonPrimary"
         type="submit"
         value="Make Your reservation"
         disabled={!isFormValid()}
         aria-label="Submit Reservation Form"
-      />
+      >
+        Make Your reservation
+      </button>
     </form>
   );
 };
