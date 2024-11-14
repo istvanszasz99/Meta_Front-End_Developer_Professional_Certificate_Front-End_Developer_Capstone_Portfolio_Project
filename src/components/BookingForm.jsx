@@ -1,13 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from "react";
+
+// Function to initialize available times
+const initializeTimes = () => {
+  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+};
+
+const updateTimes = (state, action) => {
+  const { type } = action;
+
+  switch (type) {
+    case "UPDATE_TIMES":
+      return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+    default:
+      return state;
+  }
+};
 
 const BookingForm = () => {
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState('');
-  const [availableTimes] = useState(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
+  const [occasion, setOccasion] = useState("");
 
-  const handleDateChange = (e) => setDate(e.target.value);
+  const [availableTimes, dispatch] = useReducer(
+    updateTimes,
+    [],
+    initializeTimes
+  );
+
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    dispatch({ type: "UPDATE_TIMES", date: selectedDate });
+  };
+
   const handleTimeChange = (e) => setTime(e.target.value);
   const handleGuestsChange = (e) => setGuests(e.target.value);
   const handleOccasionChange = (e) => setOccasion(e.target.value);
@@ -19,9 +45,17 @@ const BookingForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}>
+    <form
+      onSubmit={handleSubmit}
+      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+    >
       <label htmlFor="res-date">Choose date</label>
-      <input type="date" id="res-date" value={date} onChange={handleDateChange} />
+      <input
+        type="date"
+        id="res-date"
+        value={date}
+        onChange={handleDateChange}
+      />
 
       <label htmlFor="res-time">Choose time</label>
       <select id="res-time" value={time} onChange={handleTimeChange}>
@@ -55,4 +89,3 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
-
