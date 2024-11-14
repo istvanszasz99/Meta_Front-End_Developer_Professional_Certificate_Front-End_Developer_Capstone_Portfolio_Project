@@ -1,17 +1,22 @@
+// BookingForm.jsx
 import React, { useState, useReducer, useEffect } from "react";
-import { fetchAPI } from "../API";
 
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { submitAPI, fetchAPI } from "../API"; // Import submitAPI from API.js
+
+// Function to initialize available times (now it fetches available times based on today's date)
 const initializeTimes = () => {
   const today = new Date();
-  return fetchAPI(today);
+  return fetchAPI(today); // Fetch available times for today
 };
 
+// Reducer function to update available times based on the selected date
 const updateTimes = (state, action) => {
   const { type, date } = action;
 
   switch (type) {
     case "UPDATE_TIMES":
-      return fetchAPI(new Date(date));
+      return fetchAPI(new Date(date)); // Fetch available times for the selected date
     default:
       return state;
   }
@@ -29,6 +34,8 @@ const BookingForm = () => {
     initializeTimes
   );
 
+  const navigate = useNavigate(); // Use navigate hook for navigation
+
   useEffect(() => {
     if (date) {
       dispatch({ type: "UPDATE_TIMES", date });
@@ -44,10 +51,19 @@ const BookingForm = () => {
   const handleGuestsChange = (e) => setGuests(e.target.value);
   const handleOccasionChange = (e) => setOccasion(e.target.value);
 
+  // Function to submit form data
+  const submitForm = (formData) => {
+    if (submitAPI(formData)) {
+      // Navigate to the confirmed booking page if submission is successful
+      navigate("/confirmed");
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const reservationData = { date, time, guests, occasion };
     console.log("Reservation Data: ", reservationData);
+    submitForm(reservationData); // Submit form data
   };
 
   return (
